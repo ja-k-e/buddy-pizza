@@ -23,7 +23,7 @@ function render() {
     "url": "https://example.com/image.jpg",
     "alt": "Some very descriptive alt text",
     "height": 100,
-    "width": 100,
+    "width": 100
   },`
     : "";
   code.innerHTML = `{

@@ -6,8 +6,8 @@
   "pronouns": "it/this",
   "image": {
     "url": "https://social.buddy.pizza/image.png",
-    "alt": "The words \"buddy.pizza\"",
-    "height": 600,
-    "width": 600
+    "alt": "The buddy.pizza logo, geometric triangles and semicircles",
+    "height": 512,
+    "width": 512
   }
 }
