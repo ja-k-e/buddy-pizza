@@ -1,0 +1,13 @@
+{
+  "@": "buddy.pizza",
+  "name": "Buddy Pizza",
+  "location": "Earth",
+  "bio": "Hey, buddy.",
+  "pronouns": "it/this",
+  "image": {
+    "url": "https://social.buddy.pizza/image.png",
+    "alt": "The words \"buddy.pizza\"",
+    "height": 600,
+    "width": 600
+  }
+}
