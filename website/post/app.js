@@ -1,4 +1,3 @@
-const timestamp = document.getElementById("timestamp");
 const postText = document.getElementById("post-text");
 const postUrl = document.getElementById("post-url");
 const postImage = document.getElementById("post-image");
@@ -15,7 +14,6 @@ postImage.addEventListener("input", render);
 
 function render() {
   const time = Date.now();
-  timestamp.innerText = time;
   const text = postText.value;
   const url = postUrl.value;
   const image = postImage.checked;
