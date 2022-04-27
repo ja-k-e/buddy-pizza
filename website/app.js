@@ -9,6 +9,15 @@ function go() {
   const params = new URLSearchParams(location.search);
   const source = params.get("s") || "social.buddy.pizza";
 
+  document.body.addEventListener("keyup", ({ code }) => {
+    if (code === "Escape") {
+      const div = document.querySelector("div.overlay");
+      if (div) {
+        div.remove();
+      }
+    }
+  });
+
   run(source);
 
   async function run(domain) {
@@ -55,7 +64,7 @@ function go() {
       text = textWithReply(post.key, text);
       const img = imgFromPost(post.image, text);
       const url = urlFromPost(post.url);
-      const replyUrl = `https://buddy.pizza/post/?t=@${post.key}%23${post.time}%20your%20reply%20here`;
+      const replyUrl = `post/?t=@${post.key}%23${post.time}%20your%20reply%20here`;
       const timeString = new Date(post.time).toLocaleString();
       const authorLink = `<a class="a" href="https://${post.key}" title="${profileA.name}">${at}</a>`;
       const timeLink = `<a class="t" title="${timeString}" href="${replyUrl}">${post.time}</a>`;
@@ -67,7 +76,24 @@ function go() {
           ${timeLink}
           </p>`;
     });
+    document.querySelectorAll("a.t").forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        showIframe(anchor.href);
+      });
+    });
   }
+
+  function showIframe(href) {
+    const div = document.createElement("div");
+    div.className = "overlay";
+    div.innerHTML = `<button id="close" type="button">&nbsp;</button><iframe src="${href}"></iframe>`;
+    document.body.appendChild(div);
+    document
+      .getElementById("close")
+      .addEventListener("click", () => div.remove());
+  }
+
   function fetchDataForDomain(url) {
     return new Promise(async (resolve, reject) => {
       try {

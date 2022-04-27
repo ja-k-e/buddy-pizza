@@ -5,8 +5,23 @@ input {
   font-size: 1rem;
 }
 body {
-  padding: 3rem;
+  margin: 0;
   text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+  height: 100%;
+  width: 90%;
 }
 
 pre {
