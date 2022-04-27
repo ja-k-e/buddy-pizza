@@ -1,1 +1,1 @@
-# buddy-pizza
+# buddy.pizza

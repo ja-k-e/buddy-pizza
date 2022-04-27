@@ -7,7 +7,7 @@ function go() {
   const streams = {};
 
   const params = new URLSearchParams(location.search);
-  const source = params.get("s") || "social.jake.fun";
+  const source = params.get("s") || "social.buddy.pizza";
 
   run(source);
 
@@ -31,17 +31,17 @@ function go() {
   }
 
   function render(stream) {
-    console.log(last);
+    const item = stream[0] || {};
     if (
       stream.length === last.count &&
-      stream[0].key === last.key &&
-      stream[0].time === last.time
+      item.key === last.key &&
+      item.time === last.time
     ) {
       return;
     }
     last.count = stream.length;
-    last.key = stream[0].key;
-    last.time = stream[0].time;
+    last.key = item.key;
+    last.time = item.time;
     const ul = document.getElementById("feed");
     ul.innerHTML = "";
     stream.forEach((post) => {
@@ -55,7 +55,7 @@ function go() {
       text = textWithReply(post.key, text);
       const img = imgFromPost(post.image, text);
       const url = urlFromPost(post.url);
-      const replyUrl = `https://social.jake.fun/new/?t=@${post.key}%23${post.time}%20your%20reply%20here`;
+      const replyUrl = `https://buddy.pizza/post/?t=@${post.key}%23${post.time}%20your%20reply%20here`;
       const timeString = new Date(post.time).toLocaleString();
       const authorLink = `<a class="a" href="https://${post.key}" title="${profileA.name}">${at}</a>`;
       const timeLink = `<a class="t" title="${timeString}" href="${replyUrl}">${post.time}</a>`;
