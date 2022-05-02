@@ -60,6 +60,7 @@ function go() {
       const profileA = profiles[post.key];
       const at = profileA["@"];
       let { text } = post;
+      text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
       text = textWithLinks(text);
       text = textWithReply(post.key, text);
       const img = imgFromPost(post.image, text);
