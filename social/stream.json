@@ -1,9 +1,9 @@
 [
   {
     "text": "hello world",
-    "url": "https://buddy.pizza",
+    "url": "https://buddy.pizza.jake.fun",
     "image": {
-      "url": "https://buddy.pizza/icon.png",
+      "url": "https://buddy.pizza.jake.fun/icon.png",
       "alt": "The buddy.pizza logo, geometric triangles and semicircles",
       "height": 512,
       "width": 512
