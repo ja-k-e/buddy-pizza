@@ -7,7 +7,7 @@ function go() {
   const streams = {};
 
   const params = new URLSearchParams(location.search);
-  const source = params.get("s") || "social.buddy.pizza";
+  const source = params.get("s") || "social.buddy.pizza.jake.fun";
 
   document.body.addEventListener("keyup", ({ code }) => {
     if (code === "Escape") {
